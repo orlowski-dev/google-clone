@@ -11,6 +11,7 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   title: "Google Search Clone",
   description: "Google search website clone",
+  icons: ["/favicon.ico"],
 };
 
 export default function RootLayout({

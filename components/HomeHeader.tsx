@@ -4,7 +4,7 @@ import { CgMenuGridO } from "react-icons/cg";
 export default function HomeHeader() {
   return (
     <header>
-      <div className="max-w-6xl mx-auto flex justify-end p-6">
+      <div className="flex justify-end p-4">
         <div className="flex gap-5 items-center">
           <Link href="https://mail.google.com" className="hover:underline">
             Gmail
@@ -17,7 +17,7 @@ export default function HomeHeader() {
           </button>
           <Link
             href="/"
-            className="inline-block py-2 px-4 bg-blue-500 rounded-lg text-white font-medium hover:brightness-105 transition-colors hover:shadow-md"
+            className="text-sm inline-block py-2 px-4 bg-blue-500 rounded-lg text-white font-medium hover:brightness-105 transition-colors hover:shadow-md"
           >
             Sign in
           </Link>
