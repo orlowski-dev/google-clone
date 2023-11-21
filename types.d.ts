@@ -11,3 +11,11 @@ interface IGoogleApiResponsItem {
   htmlFormattedUrl: string;
   pagemap: { cse_thumbnail: [Array]; metatags: [Array]; cse_image: [Array] };
 }
+
+interface IGoogleApiResponseData {
+  searchInformation: {
+    formattedTotalResults: string;
+    formattedSearchTime: string;
+  };
+  items: IGoogleApiResponsItem[];
+}

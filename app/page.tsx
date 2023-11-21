@@ -6,7 +6,7 @@ export default function App() {
   return (
     <>
       <HomeHeader />
-      <main className="pb-[100px]">
+      <main>
         <div className="max-w-[300px] md:max-w-[400px] mx-auto p-6 mt-6 md:mt-12 text-right">
           <Image
             src="/Google_2015_logo.svg"

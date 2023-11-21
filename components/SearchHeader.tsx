@@ -8,7 +8,7 @@ import SearchHeaderOptions from "./SearchHeaderOptions";
 
 export default function SearchHeader() {
   return (
-    <header>
+    <header className="sticky top-0 left-0 bg-white z-10">
       <div className="p-4 grid gap-4 grid-cols-search-header-mobile md:grid-cols-search-header-desktop items-center">
         <div className="md:hidden">
           <IconButton>

@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={"font-roboto " + roboto.variable}>
         <>
-          {children}
+          <div className="pb-[160px]">{children}</div>
           <Footer />
         </>
       </body>

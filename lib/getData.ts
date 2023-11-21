@@ -6,7 +6,7 @@ if (!GOOGLE_CONTEXT_KEY) throw Error("Google context key doesn't exist!");
 
 export async function getPSE(
   searchTerm: string
-): Promise<IGoogleApiResponsItem[] | undefined | null> {
+): Promise<IGoogleApiResponseData | null> {
   const uri = `https://www.googleapis.com/customsearch/v1?key=${GOOGLE_API_KEY}&cx=${GOOGLE_CONTEXT_KEY}&q=${searchTerm}`;
 
   const res = await fetch(uri);
@@ -16,11 +16,6 @@ export async function getPSE(
   }
 
   const data = await res.json();
-  const items: IGoogleApiResponsItem[] = data.items;
 
-  if (!items) {
-    return null;
-  }
-
-  return items;
+  return data;
 }
