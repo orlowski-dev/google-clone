@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/Footer";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -21,7 +22,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={"font-roboto " + roboto.variable}>{children}</body>
+      <body className={"font-roboto " + roboto.variable}>
+        <>
+          {children}
+          <Footer />
+        </>
+      </body>
     </html>
   );
 }
