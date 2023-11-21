@@ -11,6 +11,10 @@ const config: Config = {
       fontFamily: {
         roboto: "var(--roboto)",
       },
+      gridTemplateColumns: {
+        "search-header-mobile": "40px auto 40px",
+        "search-header-desktop": "100px auto 200px",
+      },
     },
   },
   plugins: [],

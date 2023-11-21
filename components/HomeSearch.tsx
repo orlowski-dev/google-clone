@@ -51,7 +51,7 @@ export default function HomeSearch() {
           }
           className="flex-grow focus:outline-none"
         />
-        <BsFillMicFill className="text-lg text-gray-500 mr-3" />
+        <BsFillMicFill className="cursor-pointer text-lg text-gray-500 mr-3" />
       </form>
       <div className="flex space-x-2 justify-center mt-8 px-6">
         <button
