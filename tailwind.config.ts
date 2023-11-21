@@ -14,6 +14,7 @@ const config: Config = {
       gridTemplateColumns: {
         "search-header-mobile": "40px auto 40px",
         "search-header-desktop": "100px auto 200px",
+        "image-search-results": "repeat(auto-fit, minmax(200px, 280px))",
       },
     },
   },

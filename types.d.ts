@@ -10,6 +10,7 @@ interface IGoogleApiResponsItem {
   formattedUrl: string;
   htmlFormattedUrl: string;
   pagemap: { cse_thumbnail: [Array]; metatags: [Array]; cse_image: [Array] };
+  image?: { contextLink: string; thumbnailLink: string };
 }
 
 interface IGoogleApiResponseData {
