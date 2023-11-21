@@ -4,11 +4,12 @@ import IconButton from "./IconButton";
 import LinkButton from "./LinkButton";
 import Search from "./Search";
 import Link from "next/link";
+import SearchHeaderOptions from "./SearchHeaderOptions";
 
 export default function SearchHeader() {
   return (
-    <header className="p-4">
-      <div className="grid gap-4 grid-cols-search-header-mobile md:grid-cols-search-header-desktop items-center">
+    <header>
+      <div className="p-4 grid gap-4 grid-cols-search-header-mobile md:grid-cols-search-header-desktop items-center">
         <div className="md:hidden">
           <IconButton>
             <CgMenu />
@@ -45,6 +46,7 @@ export default function SearchHeader() {
           </div>
         </div>
       </div>
+      <SearchHeaderOptions />
     </header>
   );
 }

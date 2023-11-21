@@ -10,7 +10,7 @@ import { IoClose } from "react-icons/io5";
 export default function Search() {
   const [randomSearchLoading, setRandomSearchLoading] = useState(false);
   const { push } = useRouter();
-  const searchParams = useSearchParams().get("search");
+  const searchParams = useSearchParams().get("searchTerm");
   const inputRef = useRef<HTMLInputElement>(null);
 
   const [input, setInput] = useState(searchParams || "");
@@ -20,7 +20,7 @@ export default function Search() {
 
     if (!input.trim()) return;
 
-    push("/search/web?search=" + input);
+    push("/search/web?searchTerm=" + input);
     inputRef.current!.blur();
   };
 

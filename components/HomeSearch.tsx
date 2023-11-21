@@ -16,7 +16,7 @@ export default function HomeSearch() {
 
     if (!input.trim()) return;
 
-    push("/search/web?search=" + input);
+    push("/search/web?searchTerm=" + input);
   };
 
   const randomSearch = async () => {
@@ -32,7 +32,7 @@ export default function HomeSearch() {
 
     const data: string[] = await res.json();
 
-    push("/search/web?search=" + data[0]);
+    push("/search/web?searchTerm=" + data[0]);
     setRandomSearchLoading(false);
   };
 

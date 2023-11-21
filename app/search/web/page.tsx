@@ -1,9 +1,9 @@
 export default async function WebSearchPage({
   searchParams,
 }: {
-  searchParams: { search: string };
+  searchParams: { searchTerm: string };
 }) {
-  const searchTerm = searchParams.search;
+  const searchTerm = searchParams.searchTerm;
   return (
     <>
       <main>
