@@ -6,10 +6,12 @@ if (!GOOGLE_CONTEXT_KEY) throw Error("Google context key doesn't exist!");
 
 export async function getPSE(
   searchTerm: string,
-  extra?: { key: string; value: string }
+  extra?: { key: string; value: string }[]
 ): Promise<IGoogleApiResponseData | null> {
   let uri = `https://www.googleapis.com/customsearch/v1?key=${GOOGLE_API_KEY}&cx=${GOOGLE_CONTEXT_KEY}&q=${searchTerm}`;
-  if (extra) uri += "&" + extra.key + "=" + extra.value;
+  if (extra && extra.length > 0) {
+    extra.forEach((item) => (uri += "&" + item.key + "=" + item.value));
+  }
 
   const res = await fetch(uri);
 

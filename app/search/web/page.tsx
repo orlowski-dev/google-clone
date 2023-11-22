@@ -3,14 +3,23 @@ import { getPSE } from "@/lib/getData";
 import Link from "next/link";
 import { Suspense } from "react";
 import Loading from "./loading";
+import Pagination from "@/components/Pagination";
 
 export default async function WebSearchPage({
   searchParams,
 }: {
-  searchParams: { searchTerm: string };
+  searchParams: { searchTerm: string; start: string };
 }) {
   const searchTerm = searchParams.searchTerm;
-  const data: IGoogleApiResponseData | null = await getPSE(searchTerm);
+  const apiUrlExtras: { key: string; value: string }[] = [];
+
+  if (searchParams.start)
+    apiUrlExtras.push({ key: "start", value: searchParams.start });
+
+  const data: IGoogleApiResponseData | null = await getPSE(
+    searchTerm,
+    apiUrlExtras
+  );
 
   return (
     <Suspense fallback={<Loading />}>
@@ -28,9 +37,12 @@ export default async function WebSearchPage({
           </div>
         )}
         {data && (
-          <div className="px-4 md:ml-[120px]">
-            <WebSearchResults data={data} />
-          </div>
+          <>
+            <div className="px-4 md:ml-[120px]">
+              <WebSearchResults data={data} />
+            </div>
+            <Pagination />
+          </>
         )}
       </main>
     </Suspense>

@@ -3,14 +3,20 @@ import Loading from "./loading";
 import Link from "next/link";
 import ImageSearchResults from "@/components/ImageSearchResults";
 import { getPSE } from "@/lib/getData";
+import Pagination from "@/components/Pagination";
 
 export default async function ImageSearchPage({
   searchParams,
 }: {
-  searchParams: { searchTerm: string };
+  searchParams: { searchTerm: string; start: string };
 }) {
   const searchTerm = searchParams.searchTerm;
-  const data = await getPSE(searchTerm, { key: "searchType", value: "image" });
+  let apiUrlExtras = [{ key: "searchType", value: "image" }];
+
+  if (searchParams.start)
+    apiUrlExtras.push({ key: "start", value: searchParams.start });
+
+  const data = await getPSE(searchTerm, apiUrlExtras);
   return (
     <Suspense fallback={<Loading />}>
       <main>
@@ -27,9 +33,12 @@ export default async function ImageSearchPage({
           </div>
         )}
         {data && (
-          <div className="px-4">
-            <ImageSearchResults data={data} />
-          </div>
+          <>
+            <div className="px-4">
+              <ImageSearchResults data={data} />
+            </div>
+            <Pagination />
+          </>
         )}
       </main>
     </Suspense>
